@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leo Minichillo | Data Analyst & Strategist</title>
+    <title>Leo Minichillo</title>
     <meta name="description" content="Leo Minichillo's portfolio, showcasing data analysis, sales, and quality assurance skills.">
     <meta name="keywords" content="data analyst, strategist, economics, data science, sales, quality assurance">
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Leo Minichillo">
+    <meta property="og:description" content="Portfolio showcasing data analysis, sales, and quality assurance skills.">
+    <meta property="og:image" content="https://leominichillo.com/leo.jpg">
+    <meta property="og:url" content="https://leominichillo.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leo Minichillo | Data Analyst & Strategist">
+    <meta name="twitter:description" content="Portfolio showcasing data analysis, sales, and quality assurance skills.">
+    <meta name="twitter:image" content="https://leominichillo.com/leo.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -19,6 +32,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -52,12 +69,30 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
             text-decoration: none;
+            position: relative;
         }
 
         .social-bar a:hover {
             color: var(--primary-color);
             transform: translateX(10px);
             background: rgba(255,255,255,0.2);
+        }
+
+        .social-bar a:hover::after {
+            content: attr(title);
+            position: absolute;
+            left: 60px;
+            background: rgba(0,0,0,0.8);
+            color: var(--text-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .social-bar a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         .hero {
@@ -83,16 +118,18 @@
             border: 3px solid var(--primary-color);
             box-shadow: 0 0 20px var(--primary-color);
             position: relative;
+            margin-left: 2rem;
         }
 
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            loading: lazy;
         }
 
         .typing-text {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
@@ -121,6 +158,12 @@
             background: var(--primary-color);
             color: var(--dark-bg);
             transform: scale(1.05);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .resume-btn:focus, .cert-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         nav {
@@ -157,8 +200,21 @@
             color: var(--primary-color);
         }
 
+        nav a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
         section {
             padding: 5rem 10%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
         }
 
         .section-title {
@@ -249,15 +305,67 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         button:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        button:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         #certifications ul li {
             margin-bottom: 1.5rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .back-to-top:focus {
+            outline: 2px solid var(--text-color);
+            outline-offset: 2px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -277,6 +385,7 @@
             .hero-image {
                 width: 150px;
                 height: 150px;
+                margin-left: 0;
             }
 
             .typing-text {
@@ -323,6 +432,10 @@
                 transform: scale(1.1);
             }
 
+            .social-bar a:hover::after {
+                display: none;
+            }
+
             section {
                 padding: 3rem 5%;
             }
@@ -352,6 +465,14 @@
             .resume-btn, .cert-link {
                 padding: 0.6rem 1.5rem;
                 font-size: 0.9rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
             }
         }
 
@@ -396,13 +517,13 @@
 
     <nav id="navbar">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
@@ -420,7 +541,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="./leo.jpg" alt="Leo Minichillo">
+            <img src="./leo.jpg" alt="Leo Minichillo in graduation attire">
         </div>
     </section>
 
@@ -555,6 +676,10 @@
         </form>
     </section>
 
+    <a href="#home" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script>
         // Typing effect with error handling
         const text = "Leo Minichillo";
@@ -574,9 +699,10 @@
             console.error('Typing element not found');
         }
 
-        // Navbar scroll effect
+        // Navbar scroll effect and active state
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
             if (navbar) {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -584,6 +710,23 @@
                     navbar.classList.remove('scrolled');
                 }
             }
+
+            // Highlight active section in nav
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
 
         // Smooth scrolling for navigation links
@@ -597,6 +740,16 @@
                     });
                 }
             });
+        });
+
+        // Back to top button visibility
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
     </script>
 </body>
