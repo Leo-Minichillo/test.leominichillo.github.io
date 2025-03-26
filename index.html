@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leo Minichillo</title>
+    <title>Leo Minichillo | Data Analyst & Strategist</title>
     <meta name="description" content="Leo Minichillo's portfolio, showcasing data analysis, sales, and quality assurance skills.">
     <meta name="keywords" content="data analyst, strategist, economics, data science, sales, quality assurance">
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Leo Minichillo">
+    <meta property="og:title" content="Leo Minichillo | Data Analyst & Strategist">
     <meta property="og:description" content="Portfolio showcasing data analysis, sales, and quality assurance skills.">
     <meta property="og:image" content="https://leominichillo.com/leo.jpg">
     <meta property="og:url" content="https://leominichillo.com">
@@ -17,8 +17,11 @@
     <meta name="twitter:title" content="Leo Minichillo | Data Analyst & Strategist">
     <meta name="twitter:description" content="Portfolio showcasing data analysis, sales, and quality assurance skills.">
     <meta name="twitter:image" content="https://leominichillo.com/leo.jpg">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -103,11 +106,123 @@
             padding: 0 10%;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
             position: relative;
+            top: 0;
+        }
+
+        .ufo {
+            position: absolute;
+            width: 70px;
+            height: 40px;
+            background: linear-gradient(45deg, #00ff9d, #00b374);
+            border-radius: 50% / 30%;
+            box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0, 255, 157, 0.6), 0 0 60px rgba(0, 255, 157, 0.3);
+            z-index: 1;
+            animation: flyAcross 3s ease-in-out forwards;
+        }
+
+        .ufo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(180, 180, 180, 0.4));
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .ufo::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(0, 255, 157, 0.9) 20%, transparent 70%);
+            border-radius: 50%;
+            animation: glowPulse 0.5s ease-in-out infinite;
+        }
+
+        .ufo-trail {
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to left, rgba(0, 255, 157, 0.8), transparent);
+            left: -100px;
+            top: 50%;
+            z-index: 0;
+            animation: trailFade 3s ease-in-out forwards;
+        }
+
+        @keyframes flyAcross {
+            0% {
+                left: -70px;
+                top: 80%;
+                transform: scale(0.8) rotate(0deg);
+            }
+            20% {
+                left: 20%;
+                top: 60%;
+                transform: scale(1.2) rotate(15deg);
+            }
+            40% {
+                left: 40%;
+                top: 70%;
+                transform: scale(0.9) rotate(-10deg);
+            }
+            60% {
+                left: 60%;
+                top: 50%;
+                transform: scale(1.1) rotate(10deg);
+            }
+            80% {
+                left: 80%;
+                top: 60%;
+                transform: scale(0.8) rotate(-5deg);
+            }
+            100% {
+                left: 100%;
+                top: 40%;
+                transform: scale(1) rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
 
         .hero-content {
             flex: 1;
             padding-right: 50px;
+            z-index: 2;
+        }
+
+        .cta-buttons {
+            z-index: 2;
+        }
+
+        .resume-btn {
+            z-index: 3;
         }
 
         .hero-image {
@@ -119,6 +234,7 @@
             box-shadow: 0 0 20px var(--primary-color);
             position: relative;
             margin-left: 2rem;
+            z-index: 2;
         }
 
         .hero-image img {
@@ -308,7 +424,7 @@
             transition: all 0.3s ease;
         }
 
-        button:hover {
+        .contact-form button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 10px var(--primary-color);
         }
@@ -474,6 +590,27 @@
                 height: 40px;
                 font-size: 1.2rem;
             }
+
+            .ufo {
+                width: 50px;
+                height: 30px;
+            }
+
+            .ufo::before {
+                width: 25px;
+                height: 15px;
+                top: -7px;
+            }
+
+            .ufo::after {
+                width: 40px;
+                height: 6px;
+            }
+
+            .ufo-trail {
+                width: 80px;
+                height: 2px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -528,6 +665,9 @@
     </nav>
 
     <section id="home" class="hero">
+        <div class="ufo">
+            <div class="ufo-trail"></div>
+        </div>
         <div class="hero-content">
             <h1 class="typing-text" id="typing"></h1>
             <p>Data Analyst & Strategist</p>
@@ -681,6 +821,11 @@
     </a>
 
     <script>
+        // Scroll to top on page load
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+
         // Typing effect with error handling
         const text = "Leo Minichillo";
         let index = 0;
