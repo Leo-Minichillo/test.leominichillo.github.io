@@ -149,35 +149,37 @@
             border-radius: 50%;
             opacity: 0;
             box-shadow: 0 0 10px var(--primary-color), 0 0 20px rgba(0, 255, 157, 0.5);
-            animation: appear 0.8s ease forwards;
+            animation: appear 0.2s ease forwards;
+            z-index: 2;
+            transform: translate(-50%, -50%);
         }
 
-        /* Positioning 25 data points with increased variance and an upward trend */
-        .data-point:nth-child(1) { top: 80%; left: 5%; animation-delay: 0s; }
-        .data-point:nth-child(2) { top: 82%; left: 9%; animation-delay: 0.2s; }
-        .data-point:nth-child(3) { top: 78%; left: 13%; animation-delay: 0.4s; }
-        .data-point:nth-child(4) { top: 75%; left: 17%; animation-delay: 0.6s; }
-        .data-point:nth-child(5) { top: 77%; left: 21%; animation-delay: 0.8s; }
-        .data-point:nth-child(6) { top: 73%; left: 25%; animation-delay: 1s; }
-        .data-point:nth-child(7) { top: 70%; left: 29%; animation-delay: 1.2s; }
-        .data-point:nth-child(8) { top: 72%; left: 33%; animation-delay: 1.4s; }
-        .data-point:nth-child(9) { top: 68%; left: 37%; animation-delay: 1.6s; }
-        .data-point:nth-child(10) { top: 65%; left: 41%; animation-delay: 1.8s; }
-        .data-point:nth-child(11) { top: 62%; left: 45%; animation-delay: 2s; }
-        .data-point:nth-child(12) { top: 64%; left: 49%; animation-delay: 2.2s; }
-        .data-point:nth-child(13) { top: 60%; left: 53%; animation-delay: 2.4s; }
-        .data-point:nth-child(14) { top: 58%; left: 57%; animation-delay: 2.6s; }
-        .data-point:nth-child(15) { top: 55%; left: 61%; animation-delay: 2.8s; }
-        .data-point:nth-child(16) { top: 57%; left: 65%; animation-delay: 3s; }
-        .data-point:nth-child(17) { top: 53%; left: 69%; animation-delay: 3.2s; }
-        .data-point:nth-child(18) { top: 50%; left: 73%; animation-delay: 3.4s; }
-        .data-point:nth-child(19) { top: 47%; left: 77%; animation-delay: 3.6s; }
-        .data-point:nth-child(20) { top: 45%; left: 81%; animation-delay: 3.8s; }
-        .data-point:nth-child(21) { top: 42%; left: 85%; animation-delay: 4s; }
-        .data-point:nth-child(22) { top: 40%; left: 89%; animation-delay: 4.2s; }
-        .data-point:nth-child(23) { top: 37%; left: 93%; animation-delay: 4.4s; }
-        .data-point:nth-child(24) { top: 35%; left: 97%; animation-delay: 4.6s; }
-        .data-point:nth-child(25) { top: 30%; left: 100%; animation-delay: 4.8s; }
+        /* Updated delays for 25 data points, spread over 1.8s */
+        .data-point:nth-child(1) { top: 88%; left: 5%; animation-delay: 0s; }
+        .data-point:nth-child(2) { top: 94%; left: 9%; animation-delay: 0.072s; }
+        .data-point:nth-child(3) { top: 92%; left: 13%; animation-delay: 0.144s; }
+        .data-point:nth-child(4) { top: 85%; left: 17%; animation-delay: 0.216s; }
+        .data-point:nth-child(5) { top: 81%; left: 21%; animation-delay: 0.288s; }
+        .data-point:nth-child(6) { top: 84%; left: 25%; animation-delay: 0.36s; }
+        .data-point:nth-child(7) { top: 80%; left: 29%; animation-delay: 0.432s; }
+        .data-point:nth-child(8) { top: 80%; left: 33%; animation-delay: 0.504s; }
+        .data-point:nth-child(9) { top: 83%; left: 37%; animation-delay: 0.576s; }
+        .data-point:nth-child(10) { top: 78%; left: 41%; animation-delay: 0.648s; }
+        .data-point:nth-child(11) { top: 62%; left: 45%; animation-delay: 0.72s; }
+        .data-point:nth-child(12) { top: 71%; left: 49%; animation-delay: 0.792s; }
+        .data-point:nth-child(13) { top: 77%; left: 53%; animation-delay: 0.864s; }
+        .data-point:nth-child(14) { top: 73%; left: 57%; animation-delay: 0.936s; }
+        .data-point:nth-child(15) { top: 55%; left: 61%; animation-delay: 1.008s; }
+        .data-point:nth-child(16) { top: 62%; left: 65%; animation-delay: 1.08s; }
+        .data-point:nth-child(17) { top: 65%; left: 69%; animation-delay: 1.152s; }
+        .data-point:nth-child(18) { top: 58%; left: 73%; animation-delay: 1.224s; }
+        .data-point:nth-child(19) { top: 55%; left: 77%; animation-delay: 1.296s; }
+        .data-point:nth-child(20) { top: 56%; left: 81%; animation-delay: 1.368s; }
+        .data-point:nth-child(21) { top: 49%; left: 85%; animation-delay: 1.44s; }
+        .data-point:nth-child(22) { top: 51%; left: 89%; animation-delay: 1.512s; }
+        .data-point:nth-child(23) { top: 46%; left: 93%; animation-delay: 1.584s; }
+        .data-point:nth-child(24) { top: 33%; left: 96%; animation-delay: 1.656s; }
+        .data-point:nth-child(25) { top: 20%; left: 99%; animation-delay: 1.728s; }
 
         @keyframes appear {
             0% {
@@ -452,6 +454,30 @@
             outline-offset: 2px;
         }
 
+        .line-segment {
+            position: absolute;
+            height: 2px;
+            background: var(--primary-color);
+            opacity: 0;
+            transform-origin: left center;
+            box-shadow: 0 0 5px var(--primary-color);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes drawLine {
+            0% {
+                opacity: 0;
+                transform-origin: 0 50%;
+                transform: scaleX(0) rotate(var(--angle));
+            }
+            100% {
+                opacity: 0.6;
+                transform-origin: 0 50%;
+                transform: scaleX(1) rotate(var(--angle));
+            }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -629,7 +655,7 @@
 
     <section id="home" class="hero">
         <div class="data-graph">
-            <!-- 25 data points -->
+            <!-- Data points (exactly 25) -->
             <div class="data-point"></div>
             <div class="data-point"></div>
             <div class="data-point"></div>
@@ -885,34 +911,58 @@
             }
         });
 
-        // Adjust data points with increased variance and an overall upward trend
-        const dataPoints = document.querySelectorAll('.data-point');
-        let baseTop = 80; // Starting top position
-        dataPoints.forEach((point, index) => {
-            if (index > 0) { // Skip the first point
-                // Decrease baseTop for an overall upward trend
-                baseTop -= 2; // Average decrease of 2% per point (80% to 30% over 25 points)
-                // Add increased variance: +/- 10% variation with a pattern of ups and downs
-                let variation;
-                if (index <= 5) {
-                    // First 5 points: slight dip
-                    variation = (Math.random() * 5) + 2; // +2 to +7
-                } else if (index <= 10) {
-                    // Next 5 points: rise
-                    variation = (Math.random() * -10) - 2; // -12 to -2
-                } else if (index <= 15) {
-                    // Next 5 points: dip
-                    variation = (Math.random() * 10) + 2; // +2 to +12
-                } else if (index <= 20) {
-                    // Next 5 points: rise
-                    variation = (Math.random() * -10) - 2; // -12 to -2
-                } else {
-                    // Last 5 points: slight dip then final rise
-                    variation = index <= 22 ? (Math.random() * 5) + 2 : (Math.random() * -5) - 2;
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataPoints = document.querySelectorAll('.data-point');
+            const dataGraph = document.querySelector('.data-graph');
+            
+            // Remove any existing line segments
+            document.querySelectorAll('.line-segment').forEach(el => el.remove());
+            
+            // Total animation time for dots is now 2 seconds
+            const totalDotAnimationTime = 2000; // 2 seconds in milliseconds
+            
+            // Create lines between consecutive points after all dots have appeared
+            setTimeout(() => {
+                for (let i = 0; i < dataPoints.length - 1; i++) {
+                    const currentPoint = dataPoints[i];
+                    const nextPoint = dataPoints[i + 1];
+                    
+                    const line = document.createElement('div');
+                    line.className = 'line-segment';
+                    dataGraph.appendChild(line);
+                    
+                    const graphRect = dataGraph.getBoundingClientRect();
+                    const currentRect = currentPoint.getBoundingClientRect();
+                    const nextRect = nextPoint.getBoundingClientRect();
+                    
+                    // Calculate center points relative to the container
+                    const startX = (currentRect.left - graphRect.left) + (currentRect.width / 2);
+                    const startY = (currentRect.top - graphRect.top) + (currentRect.height / 2);
+                    const endX = (nextRect.left - graphRect.left) + (nextRect.width / 2);
+                    const endY = (nextRect.top - graphRect.top) + (nextRect.height / 2);
+                    
+                    // Calculate line properties
+                    const length = Math.sqrt(
+                        Math.pow(endX - startX, 2) + 
+                        Math.pow(endY - startY, 2)
+                    );
+                    const angle = Math.atan2(endY - startY, endX - startX) * 180 / Math.PI;
+                    
+                    // Position line
+                    line.style.position = 'absolute';
+                    line.style.width = `${length}px`;
+                    line.style.left = `${startX}px`;
+                    line.style.top = `${startY}px`;
+                    line.style.transformOrigin = '0 50%';
+                    line.style.transform = `rotate(${angle}deg)`;
+                    
+                    // Animate line sequentially (faster to match shorter duration)
+                    setTimeout(() => {
+                        line.style.opacity = '0.6';
+                        line.style.transition = 'opacity 0.2s ease';
+                    }, i * 20); // Reduced delay between lines to 20ms
                 }
-                const newTop = Math.max(20, Math.min(80, baseTop + variation)); // Keep within 20% to 80%
-                point.style.top = `${newTop}%`;
-            }
+            }, totalDotAnimationTime);
         });
     </script>
 </body>
