@@ -377,6 +377,112 @@
             background: rgba(255,255,255,0.1);
         }
 
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--text-color);
+            transform: translateX(5px);
+        }
+
+        .project-link i {
+            font-size: 1.1rem;
+        }
+
+        .project-details {
+            margin-top: 1.5rem;
+        }
+
+        .project-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .project-details ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        .project-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .project-details li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .project-tools {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-tools p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .project-card {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-visuals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-image {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -600,6 +706,14 @@
                 width: 6px;
                 height: 6px;
             }
+
+            .project-visuals {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-image {
+                padding: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -646,6 +760,7 @@
             <li><a href="#home" class="nav-link active">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#certifications" class="nav-link">Certifications</a></li>
             <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
@@ -748,6 +863,45 @@
                     <li>Implemented QA protocols and statistical controls, reducing defects.</li>
                     <li>Managed high-volume operations with 100-hour work weeks.</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="cards-container">
+            <div class="card project-card">
+                <h3>Nurse Staffing Analysis Q2 2024</h3>
+                <p>Analyzed CMS Payroll-Based Journal Daily Nurse Staffing data to evaluate staffing patterns and compliance across healthcare facilities. Leveraged SQL for data extraction and analysis, creating comprehensive insights into staffing trends and facility performance.</p>
+                <div class="project-tools">
+                    <h4>Tools & Skills:</h4>
+                    <p>SQL, Data Analysis, Healthcare Metrics, Statistical Analysis</p>
+                </div>
+                <div class="project-links">
+                    <a href="./nurse_staffing_Q2_2024_Report + SQL Test.pdf" target="_blank" class="project-link">
+                        <i class="fas fa-file-pdf"></i> View Analysis Report
+                    </a>
+                    <a href="https://data.cms.gov/quality-of-care/payroll-based-journal-daily-nurse-staffing/data" target="_blank" class="project-link">
+                        <i class="fas fa-database"></i> View Data Source
+                    </a>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <h3>Coffee Shop Sales Performance Analysis (Jan-Jun 2023)</h3>
+                <p>Analyzed 149,456 coffee shop transactions from January to June 2023 to uncover revenue trends by product category. Built an interactive Excel dashboard with PivotTables, slicers, and charts to highlight top performers and sales patterns across three NYC locations.</p>
+                <div class="project-tools">
+                    <h4>Tools & Skills:</h4>
+                    <p>Excel: PivotTables, slicers, conditional formatting, charts, formulas (SUM, TEXT)</p>
+                </div>
+                <div class="project-links">
+                    <a href="./Coffee_Sales_Report_2023.pdf" target="_blank" class="project-link">
+                        <i class="fas fa-file-pdf"></i> View Full Report
+                    </a>
+                    <a href="https://1drv.ms/x/c/54348814cfbc5fcc/EQHhwuhvoHxPsCUBYBH6UYcBbsmWxfmooI_Cy1pLZWZujA?e=XrZlh1" target="_blank" class="project-link">
+                        <i class="fas fa-file-excel"></i> View Excel Analysis
+                    </a>
+                </div>
             </div>
         </div>
     </section>
